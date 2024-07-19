@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare( strict_types=1 );
 
 /*
  * This file is part of the SolidWorx Lodash-PHP project.
@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace _;
 
+use _;
+
 /**
  * Creates a `lodash` wrapper instance that wraps `value` with explicit method
  * chain sequences enabled. The result of such sequences must be unwrapped
@@ -18,9 +20,10 @@ namespace _;
  *
  * @category Seq
  *
- * @param mixed $value The value to wrap.
+ * @param mixed $value the value to wrap
  *
- * @return \_ Returns the new `lodash` wrapper instance.
+ * @return _ returns the new `lodash` wrapper instance
+ *
  * @example
  * <code>
  * $users = [
@@ -39,11 +42,10 @@ namespace _;
  * // => 'pebbles is 1'
  * </code>
  */
-function chain($value): \_
-{
-    /** @var \_ $result */
-    $result = __($value);
-    $result->__chain__ = true;
+function chain( $value ): _ {
+  /** @var _ $result */
+  $result            = new _( $value );
+  $result->__chain__ = true;
 
-    return $result;
+  return $result;
 }
